@@ -3,63 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Pembelajaran Matematika 10 SMA</title>
+    <title>LKS - Sistem Koordinat Kartesius dan Vektor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
         header {
-            background-color: #0073e6;
+            background-color: #4CAF50;
             color: white;
             padding: 20px;
+            text-align: center;
             font-size: 24px;
-            font-weight: bold;
         }
-        section {
-            margin-top: 20px;
+        main {
             padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: auto;
+        }
+        .section-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .section-box {
+            padding: 15px;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
         }
         footer {
-            margin-top: 30px;
-            padding: 15px;
-            background-color: #0073e6;
+            background-color: #333;
             color: white;
-            font-size: 14px;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .question {
+            background-color: #eef;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .answer-box {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
-    <header>Media Pembelajaran Matematika 10 SMA</header>
+    <header>
+        Lembar Kerja Siswa - Matematika 10 SMA
+    </header>
 
-    <section>
-        <h2>Sistem Koordinat Kartesius dan Vektor</h2>
-        <p>Di halaman ini, kita akan mempelajari konsep Sistem Koordinat Kartesius dan Vektor dalam matematika.</p>
+    <main class="section-container">
+        <div class="section-box">
+            <h2>Latihan Soal - Sistem Koordinat Kartesius</h2>
+            <div class="question">
+                <p>1. Jika titik A(3,4) dan titik B(-2,1), tentukan hasil penjumlahan A + B!</p>
+                <input type="text" class="answer-box" placeholder="Masukkan jawaban">
+            </div>
+            <div class="question">
+                <p>2. Jika titik P(5, -3) direfleksikan terhadap sumbu Y, tentukan koordinat baru!</p>
+                <input type="text" class="answer-box" placeholder="Masukkan jawaban">
+            </div>
+        </div>
 
-        <h3>1. Sistem Koordinat Kartesius</h3>
-        <ul>
-            <li>Pengertian Sistem Koordinat Kartesius</li>
-            <li>Bidang Koordinat dan Titik</li>
-            <li>Jarak antara Dua Titik</li>
-            <li>Gradien dan Persamaan Garis</li>
-        </ul>
+        <div class="section-box">
+            <h2>Latihan Soal - Vektor</h2>
+            <div class="question">
+                <p>1. Jika vektor u = (3, 2) dan vektor v = (-1, 4), tentukan u + v!</p>
+                <input type="text" class="answer-box" placeholder="Masukkan jawaban">
+            </div>
+            <div class="question">
+                <p>2. Sebuah vektor (2,5) dikalikan dengan skalar 3. Tentukan vektor hasilnya!</p>
+                <input type="text" class="answer-box" placeholder="Masukkan jawaban">
+            </div>
+        </div>
+    </main>
 
-        <h3>2. Vektor</h3>
-        <ul>
-            <li>Pengertian Vektor</li>
-            <li>Komponen Vektor</li>
-            <li>Operasi Penjumlahan dan Pengurangan Vektor</li>
-            <li>Perkalian Skalar dan Dot Product</li>
-        </ul>
-    </section>
-
-    <footer>@2025 10 SMA</footer>
+    <footer>
+        @2025 10 SMA
+    </footer>
 
 </body>
 </html>
