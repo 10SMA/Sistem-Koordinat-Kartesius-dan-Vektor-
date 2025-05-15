@@ -22,20 +22,41 @@
             max-width: 900px;
             margin: auto;
         }
-        .section-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
         .section-box {
             padding: 15px;
             border: 2px solid #4CAF50;
             border-radius: 8px;
             background-color: #f9f9f9;
+            margin-bottom: 20px;
         }
         h2 {
             color: #333;
             text-align: center;
+        }
+        .question {
+            background-color: #eef;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .answer-box {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+        .check-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .check-btn:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
         }
         footer {
             background-color: #333;
@@ -46,15 +67,6 @@
             bottom: 0;
             width: 100%;
         }
-        .question {
-            background-color: #eef;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-        .answer-box {
-            margin-top: 10px;
-        }
     </style>
 </head>
 <body>
@@ -63,36 +75,94 @@
         Lembar Kerja Siswa - Matematika 10 SMA
     </header>
 
-    <main class="section-container">
+    <main>
         <div class="section-box">
             <h2>Latihan Soal - Sistem Koordinat Kartesius</h2>
+            
             <div class="question">
                 <p>1. Jika titik A(3,4) dan titik B(-2,1), tentukan hasil penjumlahan A + B!</p>
-                <input type="text" class="answer-box" placeholder="Masukkan jawaban">
+                <input type="text" id="answer1" class="answer-box" placeholder="Masukkan jawaban">
+                <button class="check-btn" onclick="checkAnswer('answer1', '1,5')">Cek Jawaban</button>
+                <p id="result1" class="result"></p>
             </div>
+
             <div class="question">
                 <p>2. Jika titik P(5, -3) direfleksikan terhadap sumbu Y, tentukan koordinat baru!</p>
-                <input type="text" class="answer-box" placeholder="Masukkan jawaban">
+                <input type="text" id="answer2" class="answer-box" placeholder="Masukkan jawaban">
+                <button class="check-btn" onclick="checkAnswer('answer2', '-5,-3')">Cek Jawaban</button>
+                <p id="result2" class="result"></p>
             </div>
         </div>
 
         <div class="section-box">
             <h2>Latihan Soal - Vektor</h2>
+            
             <div class="question">
                 <p>1. Jika vektor u = (3, 2) dan vektor v = (-1, 4), tentukan u + v!</p>
-                <input type="text" class="answer-box" placeholder="Masukkan jawaban">
+                <input type="text" id="answer3" class="answer-box" placeholder="Masukkan jawaban">
+                <button class="check-btn" onclick="checkAnswer('answer3', '2,6')">Cek Jawaban</button>
+                <p id="result3" class="result"></p>
             </div>
+
             <div class="question">
                 <p>2. Sebuah vektor (2,5) dikalikan dengan skalar 3. Tentukan vektor hasilnya!</p>
-                <input type="text" class="answer-box" placeholder="Masukkan jawaban">
+                <input type="text" id="answer4" class="answer-box" placeholder="Masukkan jawaban">
+                <button class="check-btn" onclick="checkAnswer('answer4', '6,15')">Cek Jawaban</button>
+                <p id="result4" class="result"></p>
             </div>
         </div>
+
+        <div class="section-box">
+            <h2>Soal Pilihan Ganda</h2>
+            
+            <div class="question">
+                <p>Diketahui titik T(7,5) dan titik U(3,-2), tentukan hasil pengurangan T-U!</p>
+                <form id="quiz">
+                    <label><input type="radio" name="q1" value="4,-7"> a). (4,-7)</label><br>
+                    <label><input type="radio" name="q1" value="-4,-7"> b). (-4,-7)</label><br>
+                    <label><input type="radio" name="q1" value="4,7"> c). (4,7)</label><br>
+                    <label><input type="radio" name="q1" value="7,4"> d). (7,4)</label><br>
+                    <label><input type="radio" name="q1" value="-7,4"> e). (-7,4)</label><br>
+                    <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
+                </form>
+                <p id="quizResult" class="result"></p>
+            </div>
+        </div>
+
     </main>
 
     <footer>
         @2025 10 SMA
     </footer>
 
+    <script>
+        function checkAnswer(inputId, correctAnswer) {
+            const userAnswer = document.getElementById(inputId).value.trim();
+            const resultElement = document.getElementById("result" + inputId.charAt(inputId.length - 1));
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "Benar! ✅";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "Salah, coba lagi! ❌";
+                resultElement.style.color = "red";
+            }
+        }
+
+        function checkMultipleChoice() {
+            const quizForm = document.getElementById("quiz");
+            const selectedAnswer = quizForm.q1.value;
+            const quizResultElement = document.getElementById("quizResult");
+
+            if (selectedAnswer === "4,7") {
+                quizResultElement.textContent = "Benar! ✅";
+                quizResultElement.style.color = "green";
+            } else {
+                quizResultElement.textContent = "Salah, coba lagi! ❌";
+                quizResultElement.style.color = "red";
+            }
+        }
+    </script>
+
 </body>
 </html>
-
