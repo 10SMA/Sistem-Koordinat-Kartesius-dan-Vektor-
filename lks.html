@@ -117,6 +117,19 @@
                     <p>T - U = (7 - 3, 5 - (-2)) = (4, 7).</p>
                 </div>
             </div>
+
+            <div class="question">
+                <p>4. Titik yang merupakan hasil dari pencerminan titik C(−2, 5) terhadap sumbu X adalah...</p>
+                <form id="quiz">
+                    <label><input type="radio" name="q1" value="2,5"> A. (2, 5)</label><br>
+                    <label><input type="radio" name="q1" value="-2,-5"> B. (−2,−5)</label><br>
+                    <label><input type="radio" name="q1" value="2,-5"> C. (2,−5)</label><br>
+                    <label><input type="radio" name="q1" value="-5,-2"> D. (−5,−2)</label><br>
+                    <label><input type="radio" name="q1" value="-2,5"> E. (−2,5)</label><br><br>
+                    <button type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
+                </form>
+                <p class="feedback" id="quizResult"></p>
+            </div>
             
         </div>
 
@@ -152,6 +165,22 @@
                 resultElement.textContent = "Salah, coba lagi! ❌";
                 resultElement.style.color = "red";
                 explanationElement.innerHTML = `<b>Pembahasan:</b> <br> Jawaban benar: ${correctAnswer}`;
+                 function checkMultipleChoice() {
+            const feedback = document.getElementById("quizResult");
+            const selectedAnswer = document.querySelector('input[name="q1"]:checked');
+
+            if (!selectedAnswer) {
+                feedback.innerHTML = "❗ Silakan pilih jawaban!";
+                return;
+            }
+
+            if (selectedAnswer.value === "-2,-5") {
+                feedback.innerHTML = "✅ Jawaban benar! Titik hasil pencerminan adalah (−2,−5).";
+            } else {
+                feedback.innerHTML = "❌ Jawaban salah. Pembahasan: <br>" +
+                    "Saat titik C(−2, 5) dicerminkan terhadap sumbu X, koordinatnya berubah menjadi (−2, −5).";
+            }
+        }
             }
         }
     </script>
