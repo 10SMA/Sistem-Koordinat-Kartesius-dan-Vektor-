@@ -61,11 +61,24 @@
 
     <main class="section-container">
       <nav>
-    <button onclick="showPage('home')">Beranda <nav> <a href="index.html">Beranda</a> <div id="home" class="page">
-    <h2>Selamat Datang di Media Pembelajaran</h2>
-    <p>Ini adalah materi utama tentang Sistem Koordinat Kartesius dan Vektor.</p> </div> </nav> </button>
+    <button onclick="showPage('home')">Beranda</button>
+    <button onclick="showPage('lks')">LKS</button>
+    <button onclick="showPage('Profile')">Profile</button>
           
-    <button onclick="showPage('lks')">LKS</button> <nav> <a href="lks.html">Lembar Kerja Siswa</a> <div id="lks" class="page" style="display:none;">
+</nav>
+        
+<nav>
+        <a href="index.html">Beranda</a>
+<div id="home" class="page">
+    <h2>Selamat Datang di Media Pembelajaran</h2>
+    <p>Ini adalah materi utama tentang Sistem Koordinat Kartesius dan Vektor.</p>
+</div>
+</nav>
+
+         <nav>
+        <a href="lks.html">Lembar Kerja Siswa</a>
+    </nav>
+<div id="lks" class="page" style="display:none;">
     <h2>Lembar Kerja Siswa</h2>
     <p>Silakan isi jawaban pada soal-soal berikut.</p>
 </div>
@@ -88,10 +101,11 @@
     </footer>
 
 </body>
-</html></nav></botton>
-          
-    <button onclick="showPage('Profile')">Profile <nav> <a ref="Profile.html" >Profil</a> <div id= "profil" class="page" style="display:none;">
-    <h2>Profile</h2>  
+</html>
+        
+<div id="Profile" class="page" style="display:none;">
+    <h2>Profile</h2> 
+    
     <div class="section-box">
     <p>Profile Mahasiswa.</p>
     </div>
@@ -99,9 +113,7 @@
     <div class="section-box">
     <p>Profile Dosen </p>
     </div>  
-</div> </nav> </button>
-
-      </nav>
+</div>
 
 <script>
     function showPage(page) {
