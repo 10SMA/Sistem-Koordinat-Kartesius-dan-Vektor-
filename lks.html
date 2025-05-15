@@ -191,7 +191,7 @@
     </footer>
 
        <script>
-    function checkEssay(inputId, correctAnswer, explanationId, detailedExplanation) {
+    function checkEssay(inputId, correctAnswer, explanationId) {
         const userAnswer = document.getElementById(inputId).value.trim();
         const resultElement = document.getElementById("result" + inputId.charAt(inputId.length - 1));
         const explanationElement = document.getElementById(explanationId);
@@ -204,12 +204,12 @@
             resultElement.textContent = "Salah, coba lagi! ❌";
             resultElement.style.color = "red";
             explanationElement.innerHTML = `<div style="border: 2px solid red; padding: 10px; border-radius: 5px; background-color: #ffe6e6;">
-                <b>Pembahasan:</b> <br> ${detailedExplanation}
+                <b>Pembahasan:</b> <br> Jawaban benar: ${correctAnswer}
             </div>`;
         }
     }
 
-    function checkMultipleChoice(quizId, correctAnswer, explanationId, detailedExplanation) {
+    function checkMultipleChoice(quizId, correctAnswer, explanationId) {
         const quizForm = document.getElementById(quizId);
         const selectedAnswer = quizForm.querySelector('input[name="' + quizForm.id.replace("quiz", "q") + '"]:checked');
         const resultElement = document.getElementById("result" + quizId.charAt(quizId.length - 1));
@@ -224,7 +224,7 @@
                 resultElement.textContent = "Salah, coba lagi! ❌";
                 resultElement.style.color = "red";
                 explanationElement.innerHTML = `<div style="border: 2px solid red; padding: 10px; border-radius: 5px; background-color: #ffe6e6;">
-                    <b>Pembahasan:</b> <br> ${detailedExplanation}
+                    <b>Pembahasan:</b> <br> Jawaban benar: ${correctAnswer}
                 </div>`;
             }
         } else {
@@ -232,7 +232,8 @@
             resultElement.style.color = "blue";
         }
     }
-	</script>
+</script>
+
 
 
 
