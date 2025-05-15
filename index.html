@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -60,31 +61,19 @@
     </header>
 
     <main class="section-container">
-    <nav>
-    <button onclick="showPage('home')">Beranda</button>
-    <button onclick="showPage('lks')<nav><a href="lks.html">Lembar Kerja Siswa</a><div id="lks" class="page" style="display:none;"><h2>Lembar Kerja Siswa</h2><p>Silakan isi jawaban pada soal-soal berikut.</p></nav>">LKS</button>
-    <button onclick="showPage('Profile')">Profile</button>      
-    </nav>
-
-       
-
-<div id="Profile" class="page" style="display:none;">
-    <h2>Profile</h2>   
-</div>
+      <nav>
+    <button onclick="showPage('home')">Beranda<<nav><a href="index.html">Home</a></nav></button>
+    <button onclick="showPage('lks')">LKS<<nav><a href="lks.html">LKS</a></nav></button>
+    <button onclick="showPage('Profile')">Profile</button>
 
 <script>
     function showPage(page) {
-        document.getElementById('home').style.display = (page === 'home') ? 'block' : 'none';
         document.getElementById('lks').style.display = (page === 'lks') ? 'block' : 'none';
     }
 </script>
-</div>
 
-        
-        <a href="index.html">Beranda</a>
-    <h2>Selamat Datang di Media Pembelajaran</h2>
+        <h2>Selamat Datang di Media Pembelajaran</h2>
     <p>Ini adalah materi utama tentang Sistem Koordinat Kartesius dan Vektor.</p>
-
     <main class="section-container">
         <div class="section-box">
             <h2>Pengenalan Sistem Koordinat Kartesius</h2>
@@ -96,7 +85,7 @@
             <h2>Bidang Koordinat dan Penentuan Titik</h2>
             <p>Tiap titik memiliki pasangan nilai (x, y) yang menentukan lokasinya dalam bidang.</p>
         </div>
-
+        
         <div class="section-box">
             <h2>Pengenalan Sistem Koordinat Kartesius</h2>
             <p>Digunakan untuk menentukan posisi titik dalam bidang dengan sumbu X dan Y.</p>
@@ -167,4 +156,3 @@
 
 </body>
 </html>
-
