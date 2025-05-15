@@ -199,31 +199,41 @@
         if (userAnswer === correctAnswer) {
             resultElement.textContent = "Benar! ✅";
             resultElement.style.color = "green";
-            explanationElement.textContent = "";
+            explanationElement.innerHTML = "";
         } else {
             resultElement.textContent = "Salah, coba lagi! ❌";
             resultElement.style.color = "red";
-            explanationElement.innerHTML = `<b>Pembahasan:</b> <br> Jawaban benar: ${correctAnswer}`;
+            explanationElement.innerHTML = `<div style="border: 2px solid red; padding: 10px; border-radius: 5px; background-color: #ffe6e6;">
+                <b>Pembahasan:</b> <br> Jawaban benar: ${correctAnswer}
+            </div>`;
         }
     }
 
     function checkMultipleChoice(quizId, correctAnswer, explanationId) {
         const quizForm = document.getElementById(quizId);
-        const selectedAnswer = quizForm.q1 ? quizForm.q1.value : quizForm.q2 ? quizForm.q2.value : quizForm.q3 ? quizForm.q3.value : quizForm.q4.value;
+        const selectedAnswer = quizForm.querySelector('input[name="' + quizForm.id.replace("quiz", "q") + '"]:checked');
         const resultElement = document.getElementById("result" + quizId.charAt(quizId.length - 1));
         const explanationElement = document.getElementById(explanationId);
 
-        if (selectedAnswer === correctAnswer) {
-            resultElement.textContent = "Benar! ✅";
-            resultElement.style.color = "green";
-            explanationElement.textContent = "";
+        if (selectedAnswer) {
+            if (selectedAnswer.value === correctAnswer) {
+                resultElement.textContent = "Benar! ✅";
+                resultElement.style.color = "green";
+                explanationElement.innerHTML = "";
+            } else {
+                resultElement.textContent = "Salah, coba lagi! ❌";
+                resultElement.style.color = "red";
+                explanationElement.innerHTML = `<div style="border: 2px solid red; padding: 10px; border-radius: 5px; background-color: #ffe6e6;">
+                    <b>Pembahasan:</b> <br> Jawaban benar: ${correctAnswer}
+                </div>`;
+            }
         } else {
-            resultElement.textContent = "Salah, coba lagi! ❌";
-            resultElement.style.color = "red";
-            explanationElement.innerHTML = `<b>Pembahasan:</b> <br> Jawaban benar: ${correctAnswer}`;
+            resultElement.textContent = "Pilih salah satu jawaban!";
+            resultElement.style.color = "blue";
         }
     }
 	</script>
+
 
 
 </body>
