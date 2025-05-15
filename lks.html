@@ -80,9 +80,9 @@
             <h2>Latihan Soal - Sistem Koordinat Kartesius</h2>
             
             <div class="question">
-                <p>1. Jika titik A(3,4) dan titik B(-2,1), tentukan hasil penjumlahan A + B!</p>
+                <p>1. Jika titik A(9,6) dan titik B(-7,-5), tentukan hasil penjumlahan A + B!</p>
                 <input type="text" id="answer1" class="answer-box" placeholder="Masukkan jawaban">
-                <button class="check-btn" onclick="checkAnswer('answer1', '1,5')">Cek Jawaban</button>
+                <button class="check-btn" onclick="checkAnswer('answer1', '2,1')">Cek Jawaban</button>
                 <p id="result1" class="result"></p>
             </div>
 
@@ -92,7 +92,45 @@
                 <button class="check-btn" onclick="checkAnswer('answer2', '-5,-3')">Cek Jawaban</button>
                 <p id="result2" class="result"></p>
             </div>
-        </div>
+
+            <div class="question">
+                <p>3. Diketahui titik T(7,5) dan titik U(3,-2), tentukan hasil pengurangan T-U!</p>
+                <form id="quiz">
+                    <label><input type="radio" name="q1" value="4,-7"> A. (4,-7)</label><br>
+                    <label><input type="radio" name="q1" value="-4,-7"> B. (-4,-7)</label><br>
+                    <label><input type="radio" name="q1" value="4,7"> C. (4,7)</label><br>
+                    <label><input type="radio" name="q1" value="7,4"> D. (7,4)</label><br>
+                    <label><input type="radio" name="q1" value="-7,4"> E. (-7,4)</label><br>
+                    <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
+                </form>
+                <p id="quizResult" class="result"></p>
+            </div>
+
+            <div class="question">
+                <p>4. Titik yang merupakan hasil dari pencerminan titik C(−2, 5) terhadap sumbu X adalah...</p>
+                <form id="quiz">
+                <label><input type="radio" name="q1" value="2,5"> A. (2, 5)</label><br>
+                <label><input type="radio" name="q1" value="−2,−5"> B. (−2,−5)</label><br>
+                <label><input type="radio" name="q1" value="2,−5"> C. (2,−5)</label><br>
+                <label><input type="radio" name="q1" value="−5,−2"> D. (−5,−2)</label><br>
+                <label><input type="radio" name="q1" value="−2,5"> E. (−2,5)</label><br>
+                <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
+                </form>
+                <p id="quizResult" class="result"></p>
+            </div>
+
+            <div class="question">
+                <p>5. Titik A(–3, 4) dan B(5, –2). Jarak antara titik A dan B adalah...</p>
+                <form id="quiz">
+                <label><input type="radio" name="q1" value="√40"> A. √40</label><br>
+                <label><input type="radio" name="q1" value="√64"> B. √64</label><br>
+                <label><input type="radio" name="q1" value="√100"> C. √100</label><br>
+                <label><input type="radio" name="q1" value="√40"> D. √128</label><br>
+                <label><input type="radio" name="q1" value="√40"> E. √140</label><br>
+                <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
+                </form>
+                <p id="quizResult" class="result"></p>
+            </div>
 
         <div class="section-box">
             <h2>Latihan Soal - Vektor</h2>
@@ -100,34 +138,40 @@
             <div class="question">
                 <p>1. Jika vektor u = (3, 2) dan vektor v = (-1, 4), tentukan u + v!</p>
                 <input type="text" id="answer3" class="answer-box" placeholder="Masukkan jawaban">
-                <button class="check-btn" onclick="checkAnswer('answer3', '2,6')">Cek Jawaban</button>
+                <button class="check-btn" onclick="checkAnswer('answer1', '2,6')">Cek Jawaban</button>
                 <p id="result3" class="result"></p>
             </div>
 
             <div class="question">
                 <p>2. Sebuah vektor (2,5) dikalikan dengan skalar 3. Tentukan vektor hasilnya!</p>
                 <input type="text" id="answer4" class="answer-box" placeholder="Masukkan jawaban">
-                <button class="check-btn" onclick="checkAnswer('answer4', '6,15')">Cek Jawaban</button>
+                <button class="check-btn" onclick="checkAnswer('answer2', '6,15')">Cek Jawaban</button>
                 <p id="result4" class="result"></p>
+            </div>
+
+            <div class="question">
+                <p>3. Diketahui vektor E = (-5, 12). Panjang vektor E adalah...</p>
+                <input type="text" id="answer4" class="answer-box" placeholder="Masukkan jawaban">
+                <button class="check-btn" onclick="checkAnswer('answer3', '13')">Cek Jawaban</button>
+                <p id="result4" class="result"></p>
+            </div>
+
+            <div class="question">
+                <p>4. Seorang siswa sedang menganalisi dua gerakan benda dalam bidang datar.
+                    Gerakan pertama menyatakan benda bergerak sejauh 5 meter ke arah timur, lalu 5 meter ke arah utara. Sehingga membentuk vektor perpindahan total dari titik awal ke titik akhir.
+                    Gerakan kedua menyatakan perpindahan benda sejauh 10 meter ke arah timur.Maka besar sudut antara dua vektor perpindahan tersebut adalah</p>
+                <form id="quiz">
+                <label><input type="radio" name="q1" value="30°"> A. 30°</label><br>
+	            <label><input type="radio" name="q1" value="45°"> B. 45°</label><br>
+	            <label><input type="radio" name="q1" value="60°"> C. 60°</label><br>
+	            <label><input type="radio" name="q1" value="90°"> D. 90°</label><br>
+	            <label><input type="radio" name="q1" value="120°"> E. 120°</label><br>
+                <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
+                </form>
+                <p id="quizResult" class="result"></p
             </div>
         </div>
 
-        <div class="section-box">
-            <h2>Soal Pilihan Ganda</h2>
-            
-            <div class="question">
-                <p>Diketahui titik T(7,5) dan titik U(3,-2), tentukan hasil pengurangan T-U!</p>
-                <form id="quiz">
-                    <label><input type="radio" name="q1" value="4,-7"> a). (4,-7)</label><br>
-                    <label><input type="radio" name="q1" value="-4,-7"> b). (-4,-7)</label><br>
-                    <label><input type="radio" name="q1" value="4,7"> c). (4,7)</label><br>
-                    <label><input type="radio" name="q1" value="7,4"> d). (7,4)</label><br>
-                    <label><input type="radio" name="q1" value="-7,4"> e). (-7,4)</label><br>
-                    <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
-                </form>
-                <p id="quizResult" class="result"></p>
-            </div>
-        </div>
 
     </main>
 
