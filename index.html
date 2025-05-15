@@ -62,12 +62,12 @@
     <main class="section-container">
       <nav>
     <button onclick="showPage('lks')"><nav><a href="lks.html">LKS</a></nav></button>
-    <button onclick="showPage('Profile')">Profile</button>
-      </nav>
+    <button onclick="showPage('Profile')"><nav><a href="profile.html">Profil</a></nav></button>
 
 <script>
     function showPage(page) {
         document.getElementById('lks').style.display = (page === 'lks') ? 'block' : 'none';
+        document.getElementById('profile').style.display = (page === 'profile') ? 'block' : 'none';
     }
 </script>
           
