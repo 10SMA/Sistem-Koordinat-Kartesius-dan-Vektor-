@@ -58,6 +58,14 @@
             margin-top: 10px;
             font-weight: bold;
         }
+        .explanation {
+            display: none;
+            background-color: #ffdddd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border-left: 4px solid red;
+        }
         footer {
             background-color: #333;
             color: white;
@@ -77,102 +85,52 @@
 
     <main>
         <div class="section-box">
-            <h2>Latihan Soal - Sistem Koordinat Kartesius</h2>
+            <h2>Latihan Soal - Esai</h2>
             
             <div class="question">
                 <p>1. Jika titik A(9,6) dan titik B(-7,-5), tentukan hasil penjumlahan A + B!</p>
                 <input type="text" id="answer1" class="answer-box" placeholder="Masukkan jawaban">
-                <button class="check-btn" onclick="checkAnswer('answer1', '2,1')">Cek Jawaban</button>
+                <button class="check-btn" onclick="checkEssay('answer1', '2,1', 'exp1')">Cek Jawaban</button>
                 <p id="result1" class="result"></p>
+                <div id="exp1" class="explanation">
+                    <p><b>Pembahasan:</b></p>
+                    <p>A + B = (9 + (-7), 6 + (-5)) = (2,1).</p>
+                </div>
             </div>
 
             <div class="question">
                 <p>2. Jika titik P(5, -3) direfleksikan terhadap sumbu Y, tentukan koordinat baru!</p>
                 <input type="text" id="answer2" class="answer-box" placeholder="Masukkan jawaban">
-                <button class="check-btn" onclick="checkAnswer('answer2', '-5,-3')">Cek Jawaban</button>
+                <button class="check-btn" onclick="checkEssay('answer2', '-5,-3', 'exp2')">Cek Jawaban</button>
                 <p id="result2" class="result"></p>
+                <div id="exp2" class="explanation">
+                    <p><b>Pembahasan:</b></p>
+                    <p>Refleksi terhadap sumbu Y mengubah tanda koordinat x: P' = (-5,-3).</p>
+                </div>
             </div>
+        </div>
 
+        <div class="section-box">
+            <h2>Latihan Soal - Pilihan Ganda</h2>
+            
             <div class="question">
-                <p>3. Diketahui titik T(7,5) dan titik U(3,-2), tentukan hasil pengurangan T-U!</p>
-                <form id="quiz">
+                <p>Diketahui titik T(7,5) dan titik U(3,-2), tentukan hasil pengurangan T-U!</p>
+                <form id="quiz1">
                     <label><input type="radio" name="q1" value="4,-7"> A. (4,-7)</label><br>
                     <label><input type="radio" name="q1" value="-4,-7"> B. (-4,-7)</label><br>
                     <label><input type="radio" name="q1" value="4,7"> C. (4,7)</label><br>
                     <label><input type="radio" name="q1" value="7,4"> D. (7,4)</label><br>
                     <label><input type="radio" name="q1" value="-7,4"> E. (-7,4)</label><br>
-                    <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
+                    <button class="check-btn" type="button" onclick="checkMultipleChoice('quiz1', '4,7', 'exp3')">Cek Jawaban</button>
                 </form>
-                <p id="quizResult" class="result"></p>
-            </div>
-
-            <div class="question">
-                <p>4. Titik yang merupakan hasil dari pencerminan titik C(−2, 5) terhadap sumbu X adalah...</p>
-                <form id="quiz">
-                <label><input type="radio" name="q1" value="2,5"> A. (2, 5)</label><br>
-                <label><input type="radio" name="q1" value="−2,−5"> B. (−2,−5)</label><br>
-                <label><input type="radio" name="q1" value="2,−5"> C. (2,−5)</label><br>
-                <label><input type="radio" name="q1" value="−5,−2"> D. (−5,−2)</label><br>
-                <label><input type="radio" name="q1" value="−2,5"> E. (−2,5)</label><br>
-                <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
-                </form>
-                <p id="quizResult" class="result"></p>
-            </div>
-
-            <div class="question">
-                <p>5. Titik A(–3, 4) dan B(5, –2). Jarak antara titik A dan B adalah...</p>
-                <form id="quiz">
-                <label><input type="radio" name="q1" value="√40"> A. √40</label><br>
-                <label><input type="radio" name="q1" value="√64"> B. √64</label><br>
-                <label><input type="radio" name="q1" value="√100"> C. √100</label><br>
-                <label><input type="radio" name="q1" value="√40"> D. √128</label><br>
-                <label><input type="radio" name="q1" value="√40"> E. √140</label><br>
-                <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
-                </form>
-                <p id="quizResult" class="result"></p>
-            </div>
-	</div>
-
-        <div class="section-box">
-            <h2>Latihan Soal - Vektor</h2>
-            
-            <div class="question">
-                <p>1. Jika vektor u = (3, 2) dan vektor v = (-1, 4), tentukan u + v!</p>
-                <input type="text" id="answer3" class="answer-box" placeholder="Masukkan jawaban">
-                <button class="check-btn" onclick="checkAnswer('answer1', '2,6')">Cek Jawaban</button>
                 <p id="result3" class="result"></p>
-            </div>
-		
-            <div class="question">
-                <p>2. Sebuah vektor (2,5) dikalikan dengan skalar 3. Tentukan vektor hasilnya!</p>
-                <input type="text" id="answer4" class="answer-box" placeholder="Masukkan jawaban">
-                <button class="check-btn" onclick="checkAnswer('answer2', '6,15')">Cek Jawaban</button>
-                <p id="result4" class="result"></p>
-            </div>
-
-            <div class="question">
-                <p>3. Diketahui vektor E = (-5, 12). Panjang vektor E adalah...</p>
-                <input type="text" id="answer4" class="answer-box" placeholder="Masukkan jawaban">
-                <button class="check-btn" onclick="checkAnswer('answer3', '13')">Cek Jawaban</button>
-                <p id="result4" class="result"></p>
-            </div>
-
-            <div class="question">
-                <p>4. Seorang siswa sedang menganalisi dua gerakan benda dalam bidang datar.
-                    Gerakan pertama menyatakan benda bergerak sejauh 5 meter ke arah timur, lalu 5 meter ke arah utara. Sehingga membentuk vektor perpindahan total dari titik awal ke titik akhir.
-                    Gerakan kedua menyatakan perpindahan benda sejauh 10 meter ke arah timur.Maka besar sudut antara dua vektor perpindahan tersebut adalah</p>
-                <form id="quiz">
-                <label><input type="radio" name="q1" value="30°"> A. 30°</label><br>
-	            <label><input type="radio" name="q1" value="45°"> B. 45°</label><br>
-	            <label><input type="radio" name="q1" value="60°"> C. 60°</label><br>
-	            <label><input type="radio" name="q1" value="90°"> D. 90°</label><br>
-	            <label><input type="radio" name="q1" value="120°"> E. 120°</label><br>
-                <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
-                </form>
-                <p id="quizResult" class="result"></p
+                <div id="exp3" class="explanation">
+                    <p><b>Pembahasan:</b></p>
+                    <p>Pengurangan titik dilakukan dengan mengurangi masing-masing koordinatnya:</p>
+                    <p>T - U = (7 - 3, 5 - (-2)) = (4, 7).</p>
+                </div>
             </div>
         </div>
-
 
     </main>
 
@@ -181,30 +139,36 @@
     </footer>
 
     <script>
-        function checkAnswer(inputId, correctAnswer) {
+        function checkEssay(inputId, correctAnswer, explanationId) {
             const userAnswer = document.getElementById(inputId).value.trim();
             const resultElement = document.getElementById("result" + inputId.charAt(inputId.length - 1));
+            const explanationElement = document.getElementById(explanationId);
 
             if (userAnswer === correctAnswer) {
                 resultElement.textContent = "Benar! ✅";
                 resultElement.style.color = "green";
+                explanationElement.style.display = "none";
             } else {
                 resultElement.textContent = "Salah, coba lagi! ❌";
                 resultElement.style.color = "red";
+                explanationElement.style.display = "block";
             }
         }
 
-        function checkMultipleChoice() {
-            const quizForm = document.getElementById("quiz");
+        function checkMultipleChoice(quizId, correctAnswer, explanationId) {
+            const quizForm = document.getElementById(quizId);
             const selectedAnswer = quizForm.q1.value;
-            const quizResultElement = document.getElementById("quizResult");
+            const resultElement = document.getElementById("result3");
+            const explanationElement = document.getElementById(explanationId);
 
-            if (selectedAnswer === "4,7") {
-                quizResultElement.textContent = "Benar! ✅";
-                quizResultElement.style.color = "green";
+            if (selectedAnswer === correctAnswer) {
+                resultElement.textContent = "Benar! ✅";
+                resultElement.style.color = "green";
+                explanationElement.style.display = "none";
             } else {
-                quizResultElement.textContent = "Salah, coba lagi! ❌";
-                quizResultElement.style.color = "red";
+                resultElement.textContent = "Salah, coba lagi! ❌";
+                resultElement.style.color = "red";
+                explanationElement.style.display = "block";
             }
         }
     </script>
