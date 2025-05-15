@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Pembelajaran Matematika 10 SMA</title>
+    <title>LKS - Sistem Koordinat Kartesius dan Vektor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,25 +22,41 @@
             max-width: 900px;
             margin: auto;
         }
-        .section-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
         .section-box {
             padding: 15px;
             border: 2px solid #4CAF50;
             border-radius: 8px;
             background-color: #f9f9f9;
+            margin-bottom: 20px;
         }
         h2 {
             color: #333;
             text-align: center;
         }
-        img {
-            max-width: 100%;
-            display: block;
-            margin: auto;
+        .question {
+            background-color: #eef;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .answer-box {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+        .check-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .check-btn:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
         }
         footer {
             background-color: #333;
@@ -56,76 +72,156 @@
 <body>
 
     <header>
-        Media Pembelajaran Matematika 10 SMA
+        Lembar Kerja Siswa - Matematika 10 SMA
     </header>
 
-    <main class="section-container">
+    <main>
         <div class="section-box">
-            <h2>Pengenalan Sistem Koordinat Kartesius</h2>
-            <p>Digunakan untuk menentukan posisi titik dalam bidang dengan sumbu X dan Y.</p>
-            <img src="https://asset.kompas.com/crops/3dYv76tqR6vz9X28vDZMgyYVvpY=/0x42:1748x1207/750x500/data/photo/2022/01/14/61e0f6e2c56c0.png" alt="Sistem Koordinat Kartesius">
-        </div>
-
-        <div class="section-box">
-            <h2>Bidang Koordinat dan Penentuan Titik</h2>
-            <p>Tiap titik memiliki pasangan nilai (x, y) yang menentukan lokasinya dalam bidang.</p>
-            <img src="https://2.bp.blogspot.com/-rs6YQ9mcTNo/VPgMojxjZGI/AAAAAAAABdE/aPwPQpBmZbs/s1600/koordinat_kartesius.gif" alt="Sistem Koordinat Kartesius">
-        </div>
-
-        <div class="section-box">
-             <h2>Operasi pada Koordinat Kartesius</h2>
-            <p>Dalam sistem koordinat Kartesius, terdapat beberapa operasi yang umum digunakan:</p>
-            <ul>
-                <li><b>Penjumlahan dan Pengurangan Titik</b>: Menjumlahkan atau mengurangkan dua titik koordinat dilakukan dengan menjumlahkan atau mengurangi nilai x dan y secara langsung.</li>
-                <li><b>Refleksi terhadap Sumbu X dan Y</b>: Titik direfleksikan dengan mengubah tanda koordinat x atau y.</li>
-                <li><b>Transformasi dan Rotasi</b>: Mengubah posisi titik dengan aturan tertentu.</li>
-            </ul>
-        </div>
-        
-        <div class="section-box example">
-                <h3>Contoh Soal:</h3>
-                <p>Jika titik A(3,4) dan titik B(-2,1), tentukan hasil penjumlahan A + B!</p>
-                <p><b>Penyelesaian:</b></p>
-                <p>A + B = (3 + (-2), 4 + 1) = (1,5)</p>
-        </div>
-
+            <h2>Latihan Soal - Sistem Koordinat Kartesius</h2>
             
-        <div class="section-box">
-            <h2>Konsep Vektor</h2>
-            <p>Vektor adalah besaran yang memiliki arah dan besar, yang direpresentasikan menggunakan panah pada sistem koordinat.</p>
-            <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/Mempelajari%20Konsep%20Dasar%20Vektor%20-%20Matematika%20Kelas%2010-07.jpg" alt="Contoh Vektor">
-            <p>contohnya dapat terlihat pada fenomena fisika seperti perpindahan, gaya dan kecepatan.</p>
-            <img src="https://cdn-web.ruangguru.com/landing-pages/assets/hs/ilustrasi%20vektor%20secara%20geometris.jpg" alt="Contoh Vektor">
-        </div>
+            <div class="question">
+                <p>1. Jika titik A(9,6) dan titik B(-7,-5), tentukan hasil penjumlahan A + B!</p>
+                <input type="text" id="answer1" class="answer-box" placeholder="Masukkan jawaban">
+                <button class="check-btn" onclick="checkEssay('answer1', '2,1', 'exp1')">Cek Jawaban</button>
+                <p id="result1" class="result"></p>
+                <div id="exp1" class="explanation">
+                    <p><b>Pembahasan:</b></p>
+                    <p>A + B = (9 + (-7), 6 + (-5)) = (2,1).</p>
+                </div>
+            </div>
+
+           <div class="question">
+                <p>2. Jika titik P(5, -3) direfleksikan terhadap sumbu Y, tentukan koordinat baru!</p>
+                <input type="text" id="answer2" class="answer-box" placeholder="Masukkan jawaban">
+                <button class="check-btn" onclick="checkEssay('answer2', '-5,-3', 'exp2')">Cek Jawaban</button>
+                <p id="result2" class="result"></p>
+                <div id="exp2" class="explanation">
+                    <p><b>Pembahasan:</b></p>
+                    <p>Refleksi terhadap sumbu Y mengubah tanda koordinat x: P' = (-5,-3).</p>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>Diketahui titik T(7,5) dan titik U(3,-2), tentukan hasil pengurangan T-U!</p>
+                <form id="quiz1">
+                    <label><input type="radio" name="q1" value="4,-7"> A. (4,-7)</label><br>
+                    <label><input type="radio" name="q1" value="-4,-7"> B. (-4,-7)</label><br>
+                    <label><input type="radio" name="q1" value="4,7"> C. (4,7)</label><br>
+                    <label><input type="radio" name="q1" value="7,4"> D. (7,4)</label><br>
+                    <label><input type="radio" name="q1" value="-7,4"> E. (-7,4)</label><br>
+                    <button class="check-btn" type="button" onclick="checkMultipleChoice('quiz1', '4,7', 'exp3')">Cek Jawaban</button>
+                </form>
+                <p id="result3" class="result"></p>
+                <div id="exp3" class="explanation">
+                    <p><b>Pembahasan:</b></p>
+                    <p>Pengurangan titik dilakukan dengan mengurangi masing-masing koordinatnya:</p>
+                    <p>T - U = (7 - 3, 5 - (-2)) = (4, 7).</p>
+                </div>
+            </div>
+	</div>
+
+            <div class="question">
+                <p>4. Titik yang merupakan hasil dari pencerminan titik C(−2, 5) terhadap sumbu X adalah...</p>
+                <form id="quiz">
+                <label><input type="radio" name="q1" value="2,5"> A. (2, 5)</label><br>
+                <label><input type="radio" name="q1" value="−2,−5"> B. (−2,−5)</label><br>
+                <label><input type="radio" name="q1" value="2,−5"> C. (2,−5)</label><br>
+                <label><input type="radio" name="q1" value="−5,−2"> D. (−5,−2)</label><br>
+                <label><input type="radio" name="q1" value="−2,5"> E. (−2,5)</label><br>
+                <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
+                </form>
+                <p id="quizResult" class="result"></p>
+            </div>
+
+            <div class="question">
+                <p>5. Titik A(–3, 4) dan B(5, –2). Jarak antara titik A dan B adalah...</p>
+                <form id="quiz">
+                <label><input type="radio" name="q1" value="√40"> A. √40</label><br>
+                <label><input type="radio" name="q1" value="√64"> B. √64</label><br>
+                <label><input type="radio" name="q1" value="√100"> C. √100</label><br>
+                <label><input type="radio" name="q1" value="√40"> D. √128</label><br>
+                <label><input type="radio" name="q1" value="√40"> E. √140</label><br>
+                <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
+                </form>
+                <p id="quizResult" class="result"></p>
+            </div>
+	</div>
 
         <div class="section-box">
-            <h2>Operasi pada Vektor</h2>
-            <p>Vektor memiliki berbagai operasi dasar yang penting dalam analisis matematis:</p>
-            <ul>
-                <li><b>Penjumlahan dan Pengurangan Vektor</b>: Penjumlahan dilakukan dengan menambah masing-masing komponen vektor.</li>
-                <li><b>Perkalian Vektor dengan Skalar</b>: Mengalikan vektor dengan bilangan skalar untuk mengubah besarnya.</li>
-                <li><b>Dot Product dan Cross Product</b>: Dua operasi penting dalam analisis vektor.</li>
-            </ul>
+            <h2>Latihan Soal - Vektor</h2>
+            
+            <div class="question">
+                <p>1. Jika vektor u = (3, 2) dan vektor v = (-1, 4), tentukan u + v!</p>
+                <input type="text" id="answer3" class="answer-box" placeholder="Masukkan jawaban">
+                <button class="check-btn" onclick="checkAnswer('answer1', '2,6')">Cek Jawaban</button>
+                <p id="result3" class="result"></p>
+            </div>
+		
+            <div class="question">
+                <p>2. Sebuah vektor (2,5) dikalikan dengan skalar 3. Tentukan vektor hasilnya!</p>
+                <input type="text" id="answer4" class="answer-box" placeholder="Masukkan jawaban">
+                <button class="check-btn" onclick="checkAnswer('answer2', '6,15')">Cek Jawaban</button>
+                <p id="result4" class="result"></p>
+            </div>
+
+            <div class="question">
+                <p>3. Diketahui vektor E = (-5, 12). Panjang vektor E adalah...</p>
+                <input type="text" id="answer4" class="answer-box" placeholder="Masukkan jawaban">
+                <button class="check-btn" onclick="checkAnswer('answer3', '13')">Cek Jawaban</button>
+                <p id="result4" class="result"></p>
+            </div>
+
+            <div class="question">
+                <p>4. Seorang siswa sedang menganalisi dua gerakan benda dalam bidang datar.
+                    Gerakan pertama menyatakan benda bergerak sejauh 5 meter ke arah timur, lalu 5 meter ke arah utara. Sehingga membentuk vektor perpindahan total dari titik awal ke titik akhir.
+                    Gerakan kedua menyatakan perpindahan benda sejauh 10 meter ke arah timur.Maka besar sudut antara dua vektor perpindahan tersebut adalah</p>
+                <form id="quiz">
+                <label><input type="radio" name="q1" value="30°"> A. 30°</label><br>
+	            <label><input type="radio" name="q1" value="45°"> B. 45°</label><br>
+	            <label><input type="radio" name="q1" value="60°"> C. 60°</label><br>
+	            <label><input type="radio" name="q1" value="90°"> D. 90°</label><br>
+	            <label><input type="radio" name="q1" value="120°"> E. 120°</label><br>
+                <button class="check-btn" type="button" onclick="checkMultipleChoice()">Cek Jawaban</button>
+                </form>
+                <p id="quizResult" class="result"></p
+            </div>
         </div>
-        
-        <div class="section-box example">
-                <h3>Contoh Soal:</h3>
-                <p>Diketahui vektor u = (3, 2) dan vektor v = (-1, 4), tentukan u + v!</p>
-                <p><b>Penyelesaian:</b></p>
-                <p>u + v = (3 + (-1), 2 + 4) = (2,6)</p>
-        </div>
-        
-        <div class="section-box">
-            <h2>Video Pembelajaran</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/pcoG-VM2sq4" title="Sistem Koordinat Kartesius" frameborder="0" allowfullscreen></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/kGRP6kECWjs" title="Konsep Vektor" frameborder="0" allowfullscreen></iframe>
-        </div>
+
+
     </main>
 
     <footer>
         @2025 10 SMA
     </footer>
 
+    <script>
+        function checkAnswer(inputId, correctAnswer) {
+            const userAnswer = document.getElementById(inputId).value.trim();
+            const resultElement = document.getElementById("result" + inputId.charAt(inputId.length - 1));
+
+            if (userAnswer === correctAnswer) {
+                resultElement.textContent = "Benar! ✅";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "Salah, coba lagi! ❌";
+                resultElement.style.color = "red";
+            }
+        }
+
+        function checkMultipleChoice() {
+            const quizForm = document.getElementById("quiz");
+            const selectedAnswer = quizForm.q1.value;
+            const quizResultElement = document.getElementById("quizResult");
+
+            if (selectedAnswer === "4,7") {
+                quizResultElement.textContent = "Benar! ✅";
+                quizResultElement.style.color = "green";
+            } else {
+                quizResultElement.textContent = "Salah, coba lagi! ❌";
+                quizResultElement.style.color = "red";
+            }
+        }
+    </script>
+
 </body>
 </html>
-
