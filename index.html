@@ -17,7 +17,24 @@
             text-align: center;
             font-size: 24px;
         }
-         
+          nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #004080;
+            border-radius: 5px;
+        }
         main {
             padding: 20px;
             max-width: 900px;
@@ -60,18 +77,11 @@
         Media Pembelajaran Matematika 10 SMA
     </header>
         
-    
-    <main class="section-container">
-      <nav>
-    <button onclick="showPage('lks')"><nav><a href="lks.html">LKS</a></nav></button>
-    <button onclick="showPage('Profile')"><nav><a href="profile.html">Profil</a></nav></button>
-
-<script>
-    function showPage(page) {
-        document.getElementById('lks').style.display = (page === 'lks') ? 'block' : 'none';
-        document.getElementById('profile').style.display = (page === 'profile') ? 'block' : 'none';
-    }
-</script>
+   <nav>
+        <a href="index.html">Materi</a>
+        <a href="LKS.html">LKS</a>
+        <a href="Profil.html">Profil</a>
+    </nav>
 
           
         <div class="section-box">
