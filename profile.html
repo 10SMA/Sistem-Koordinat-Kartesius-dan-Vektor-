@@ -11,19 +11,31 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-        .navbar {
-            background-color: #0077b6;
-            padding: 15px;
-            text-align: center;
-            font-size: 18px;
+         header {
+            background-color: #48d1cc;
             color: white;
-        }
-        .header {
-            text-align: center;
             padding: 20px;
-            background-color: #00a896;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+        }
+          nav {
+            display: flex;
+            justify-content: center;
+            background-color: #338A94;
+            padding: 10px;
+        }
+        nav a {
             color: white;
-            font-size: 24px;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background-color: #004080;
+            border-radius: 5px;
         }
         .container {
             max-width: 900px;
@@ -69,10 +81,13 @@
     </style>
 </head>
 <body>
-
-    <div class="navbar">Profil Mahasiswa & Dosen</div>
-
-    <div class="header">Daftar Profil</div>
+ <header>Media Pembelajaran Matematika 10 SMA</header>
+   
+    <nav>
+        <a href="index.html">Materi</a>
+        <a href="lks.html">LKS</a>
+        <a href="profile.html">Profil</a>
+    </nav>
 
     <div class="container">
         <h2>Profil Mahasiswa</h2>
