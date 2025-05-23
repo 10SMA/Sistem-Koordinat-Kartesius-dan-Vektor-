@@ -36,23 +36,27 @@
         .profile-row {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
             margin-bottom: 20px;
         }
         .profile {
             flex: 0 0 48%;
             background-color: #ffffff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            box-shadow: 0px 6px 12px rgba(0,0,0,0.2);
             text-align: center;
-            border: 2px solid #0077b6;
+            border: 3px solid #0077b6;
+            transition: transform 0.3s ease-in-out;
+        }
+        .profile:hover {
+            transform: scale(1.05);
         }
         .profile img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             margin-bottom: 10px;
+            border: 2px solid #00a896;
         }
         .profile h3 {
             margin: 5px 0;
@@ -71,7 +75,7 @@
 
     <div class="container">
         <h2>Profil Mahasiswa</h2>
-        
+
         <div class="profile-row">
             <div class="profile">
                 <img src="mahasiswa1.jpg" alt="Mahasiswa 1">
@@ -153,6 +157,7 @@
 
 </body>
 </html>
+
 
 
 
