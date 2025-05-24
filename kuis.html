@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis - Koordinat Kartesius & Vektor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #0077b6;
+            padding: 15px;
+            text-align: center;
+            font-size: 18px;
+            color: white;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #00a896;
+            color: white;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            background-color: #ffffff;
+            border: 2px solid #0077b6;
+            transition: transform 0.3s ease-in-out;
+        }
+        .question:hover {
+            transform: scale(1.05);
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .notif {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            background-color: #00a896;
+            color: white;
+        }
+        .kunci-jawaban {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #0077b6;
+            color: white;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: #0077b6;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .score-box {
+            display: none;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #00a896;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+    <script>
+        let score = 0;
+        const answers = {
+            "notif1": "C",
+            "notif2": "B",
+            "notif3": "A",
+            "notif4": "A",
+            "notif5": "D",
+            "notif6": "B",
+            "notif7": "A",
+            "notif8": "A",
+            "notif9": "A",
+            "notif10": "A"
+        };
+
+        function kirimJawaban(notifId) {
+            var notif = document.getElementById(notifId);
+            notif.innerHTML = "<strong>Terima kasih atas jawabannya.</strong>";
+            notif.style.display = "block";
+        }
+
+        function tampilkanSkor() {
+            let correctAnswers = 0;
+            for (let key in answers) {
+                let selected = document.querySelector(`input[name="${key}"]:checked`);
+                if (selected && selected.value === answers[key]) {
+                    correctAnswers += 1;
+                }
+            }
+
+            let totalScore = correctAnswers * 10;
+            document.getElementById("scoreBox").innerHTML = `<strong>Skor Anda: ${totalScore}/100</strong>`;
+            document.getElementById("scoreBox").style.display = "block";
+
+            for (let key in answers) {
+                let kunciJawaban = document.getElementById(`kunci-${key}`);
+                kunciJawaban.innerHTML = `<strong>Kunci Jawaban:</strong> ${answers[key]}`;
+                kunciJawaban.style.display = "block";
+            }
+        }
+    </script>
+
+    <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+    
+</head>
+<body>
+
+    <div class="navbar">Kuis - Koordinat Kartesius & Vektor</div>
+
+    <div class="header">Selamat Mengerjakan!</div>
+
+    <div class="container">
+        <h2>Latihan Soal</h2>
+        
+        <div class="question">
+            <p>1. Apa nama titik perpotongan antara sumbu X dan sumbu Y dalam sistem koordinat kartesius?</p>
+            <div class="options">
+                <label><input type="radio" name="notif1" value="A"> A. Titik maksimum</label>
+                <label><input type="radio" name="notif1" value="B"> B. Titik tengah</label>
+                <label><input type="radio" name="notif1" value="C"> C. Titik asal</label>
+                <label><input type="radio" name="notif1" value="D"> D. Titik koordinat</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif1')">Kirim Jawaban</button>
+            <div id="notif1" class="notif"></div>
+            <div id="kunci-notif1" class="kunci-jawaban"></div>
+        </div>
+
+         <div class="question">
+            <p>2. Jarak antara titik A(1,2) dan B(4,6) adalah?</p>
+            <div class="options">
+                <label><input type="radio" name="notif2" value="A"> A. 4</label>
+                <label><input type="radio" name="notif2" value="B"> B. 5</label>
+                <label><input type="radio" name="notif2" value="C"> C. 6</label>
+                <label><input type="radio" name="notif2" value="D"> D. 7</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif2')">Kirim Jawaban</button>
+            <div id="notif2" class="notif"></div>
+            <div id="kunci-notif2" class="kunci-jawaban"></div>
+        </div>
+
+        <div class="question">
+            <p>3. Koordinat titik tengah dari garis yang menghubungkan titik A(2,6) dan B(4,10) adalah? </p>
+            <div class="options">
+                <label><input type="radio" name="notif3" value="A"> A. (3,8)</label>
+                <label><input type="radio" name="notif3" value="B"> B. (3,7)</label>
+                <label><input type="radio" name="notif3" value="C"> C. (2,8)</label>
+                <label><input type="radio" name="notif3" value="D"> D. (4,6)</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif3')">Kirim Jawaban</button>
+            <div id="notif3" class="notif"></div>
+            <div id="kunci-notif3" class="kunci-jawaban"></div>
+        </div>
+
+         <div class="question">
+            <p>4. Jika titik C(p,5) berjarak 5 satuan dari titik D(1,1), maka nilai p yang mungkin adalah?</p>
+            <div class="options">
+                <label><input type="radio" name="notif4" value="A"> A. 4 atau -2</label>
+                <label><input type="radio" name="notif4" value="B"> B. 5 atau -3</label>
+                <label><input type="radio" name="notif4" value="C"> C. 2 atau 3</label>
+                <label><input type="radio" name="notif4" value="D"> D. 6 atau 0</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif4')">Kirim Jawaban</button>
+            <div id="notif4" class="notif"></div>
+            <div id="kunci-notif4" class="kunci-jawaban"></div>
+        </div>
+
+         <div class="question">
+            <p>5. Titik P(3,-4) terletak pada kuadran ke-berapa?</p>
+            <div class="options">
+                <label><input type="radio" name="notif5" value="A"> A. Kuadran I </label>
+                <label><input type="radio" name="notif5" value="B"> B. Kuadran II</label>
+                <label><input type="radio" name="notif5" value="C"> C. Kuadran III</label>
+                <label><input type="radio" name="notif5" value="D"> D. Kuadran IV</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif5')">Kirim Jawaban</button>
+            <div id="notif5" class="notif"></div>
+            <div id="kunci-notif5" class="kunci-jawaban"></div>
+        </div>
+
+         <div class="question">
+            <p>6. Sebuah vektor memiliki panjang 5 dan arahnya sejajar dengan sumbu X positif, maka berapa koordinat vektor tersebut?</p>
+            <div class="options">
+                <label><input type="radio" name="notif6" value="A"> A. (0,5)</label>
+                <label><input type="radio" name="notif6" value="B"> B. (5,0)</label>
+                <label><input type="radio" name="notif6" value="C"> C. (0,-5)</label>
+                <label><input type="radio" name="notif6" value="D"> D. (-5,0)</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif6')">Kirim Jawaban</button>
+            <div id="notif6" class="notif"></div>
+            <div id="kunci-notif6" class="kunci-jawaban"></div>
+        </div>
+        
+               <div class="question">
+            <p>7. Jika vektor \(\vec{u}\)(2,-1) dan vektor \(\vec{v}\)(-3,4), maka vektor \(\vec{u}\)+ \(\vec{v}\) adalah? </p>
+            <div class="options">
+                <label><input type="radio" name="notif7" value="A"> A. (-1,3)</label>
+                <label><input type="radio" name="notif7" value="B"> B. (5,-5)</label>
+                <label><input type="radio" name="notif7" value="C"> C. (-1,5)</label>
+                <label><input type="radio" name="notif7" value="D"> D. (-5,3)</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif7')">Kirim Jawaban</button>
+            <div id="notif7" class="notif"></div>
+            <div id="kunci-notif7" class="kunci-jawaban"></div>
+        </div>
+        
+         <div class="question">
+            <p>8. Diberikan vektor \(\vec{a}\)(3,4). Panjang vektor \(\vec{a}\) adalah? </p>
+            <div class="options">
+                <label><input type="radio" name="notif8" value="A"> A. 5</label>
+                <label><input type="radio" name="notif8" value="B"> B. 6</label>
+                <label><input type="radio" name="notif8" value="C"> C. 7</label>
+                <label><input type="radio" name="notif8" value="D"> D. 25</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif8')">Kirim Jawaban</button>
+            <div id="notif8" class="notif"></div>
+            <div id="kunci-notif8" class="kunci-jawaban"></div>
+        </div>
+
+         <div class="question">
+            <p>9. Hasil dari perkalian skalar \(\vec{k}\)=(1,2) dan \(\vec{s}\)=(3,4) adalah? </p>
+            <div class="options">
+                <label><input type="radio" name="notif9" value="A"> A. 11</label>
+                <label><input type="radio" name="notif9" value="B"> B. 12</label>
+                <label><input type="radio" name="notif9" value="C"> C. 10</label>
+                <label><input type="radio" name="notif9" value="D"> D. 14</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif9')">Kirim Jawaban</button>
+            <div id="notif9" class="notif"></div>
+            <div id="kunci-notif9" class="kunci-jawaban"></div>
+        </div>
+
+         <div class="question">
+            <p>10. Diberikan dua vektor \(\vec{m}\)=(a,2) dan \(\vec{n}\)=(3,b). Jika \(\vec{m}\)x\(\vec{n}\)=0, maka hubungan a dan b adalah? </p>
+            <div class="options">
+                <label><input type="radio" name="notif10" value="A"> A. 3a+2b=0</label>
+                <label><input type="radio" name="notif10" value="B"> B. a+b=0</label>
+                <label><input type="radio" name="notif10" value="C"> C. 2a+3b=0</label>
+                <label><input type="radio" name="notif10" value="D"> D. ab=-6</label>
+            </div>
+            <button class="submit-btn" onclick="kirimJawaban('notif10')">Kirim Jawaban</button>
+            <div id="notif10" class="notif"></div>
+            <div id="kunci-notif10" class="kunci-jawaban"></div>
+        </div>
+        
+        <button class="submit-btn" onclick="tampilkanSkor()">Lihat Skor</button>
+        <div id="scoreBox" class="score-box"></div>
+    </div>
+
+</body>
+</html>
