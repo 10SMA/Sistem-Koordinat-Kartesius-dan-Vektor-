@@ -78,6 +78,16 @@
             bottom: 0;
             width: 100%;
         }
+        footer .left, footer .right {
+            width: 100px; /* Sesuaikan ukuran gambar */
+        }
+        footer .left img, footer .right img {
+            width: 100%; /* Biar gambar tidak melebihi batas div */
+        }
+        footer .center {
+            flex-grow: 1; /* Agar teks di tengah bisa memenuhi ruang */
+            text-align: center;
+        }
     </style>
  <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -192,7 +202,19 @@
     </main>
         
 <footer>
-        Pendidikan Matematika Universitas Jember @2025 Matematika 10 SMA
+        <div class="left">
+        <img src="unej.png" alt="Gambar Kiri">
+    </div>
+    <div class="center">
+        <p>@2025 Media Pembelajaran Matematika Kelas 10 SMA </p>
+        <p>Sistem Koordinat Kartesius dan Vektor</p>
+        <p>Program Studi Pendidikan Matematika </p>
+        <p>Fakultas Keguruan dan Ilmu Pendidikan</p>
+        <p>Universitas Jember</p>
+    </div>
+    <div class="right">
+        <img src="msc.png" alt="Gambar Kanan">
+    </div>
 </footer>
 
 </body>
