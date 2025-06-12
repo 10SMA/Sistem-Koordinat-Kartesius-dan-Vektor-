@@ -101,6 +101,24 @@
             border-radius: 8px;
             box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
         }
+         footer {
+            display: flex;
+            justify-content: space-between; /* Menyusun elemen secara rata */
+            align-items: center; /* Menyamakan tinggi elemen */
+            background-color: #333;
+            padding: 10px;
+            color: white;
+        }
+        footer .left, footer .right {
+            width: 100px; /* Sesuaikan ukuran gambar */
+        }
+        footer .left img, footer .right img {
+            width: 100%; /* Biar gambar tidak melebihi batas div */
+        }
+        footer .center {
+            flex-grow: 1; /* Agar teks di tengah bisa memenuhi ruang */
+            text-align: center;
+        }
     </style>
     <script>
         let score = 0;
